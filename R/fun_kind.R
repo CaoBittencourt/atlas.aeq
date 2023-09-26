@@ -51,8 +51,8 @@
 # rm(chr_pkg, chr_git)
 # 
 # [FUNCTIONS] ---------------------------
-# - Indispensability function ---------------------------------------------
-fun_ind_indispensability <- function(
+# - Human Capital Indispensability function ---------------------------------------------
+fun_kind_indispensability <- function(
     dbl_profile
     , dbl_scale_lb = 0
     , dbl_generality = NULL
@@ -126,8 +126,8 @@ fun_ind_indispensability <- function(
 }
 
 # # [TEST] ------------------------------------------------------------------
-# # - Indispensability test -------------------------------------------------
-# fun_ind_indispensability(
+# # - Human Capital Indispensability test -------------------------------------------------
+# fun_kind_indispensability(
 #   dbl_profile =
 #     rnorm(50, 50, 25) |>
 #     pmax(0) |>
