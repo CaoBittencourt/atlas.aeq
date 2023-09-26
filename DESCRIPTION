@@ -1,0 +1,12 @@
+Package: atlas.ind
+Type: Package
+Title: An Indispensability Coefficient for Human Capital Analyses
+Version: 1.0.0
+Author: Cao Bittencourt
+Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
+Description: The indispensability of human capital coefficient indicates which attributes in a professional profile are the most important, that is "indispensable".
+Depends: atlas.gene, atlas.eqvl
+Remotes: github::caobittencourt/atlas.gene, github::caobittencourt/atlas.eqvl
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
