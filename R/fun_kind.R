@@ -115,7 +115,9 @@ fun_kind_indispensability <- function(
     
   } else {
     
-    dbl_indispensability <- 1
+    rep(
+      1, length(dbl_profile)
+    ) -> dbl_indispensability
     
   }
   
