@@ -97,16 +97,27 @@ fun_kind_indispensability <- function(
   )] -> dbl_profile
   
   # Equivalence of normalized scores
-  fun_eqvl_equivalence(
-    dbl_var =
-      dbl_profile
-    , dbl_scale_lb =
-      dbl_scale_lb
-    , dbl_scale_ub =
-      max(dbl_profile)
-    , dbl_scaling =
-      1 - dbl_generality
-  ) -> dbl_indispensability
+  if(
+    max(dbl_profile) != 
+    dbl_scale_lb
+  ){
+    
+    fun_eqvl_equivalence(
+      dbl_var =
+        dbl_profile
+      , dbl_scale_lb =
+        dbl_scale_lb
+      , dbl_scale_ub =
+        max(dbl_profile)
+      , dbl_scaling =
+        1 - dbl_generality
+    ) -> dbl_indispensability
+    
+  } else {
+    
+    dbl_indispensability <- 1
+    
+  }
   
   if(is.matrix(dbl_profile)){
     

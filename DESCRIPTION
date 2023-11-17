@@ -1,7 +1,7 @@
 Package: atlas.kind
 Type: Package
 Title: An Indispensability Coefficient for Human Capital Analyses
-Version: 1.0.0
+Version: 1.0.1
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
 Description: The indispensability of human capital coefficient indicates which attributes in a professional profile are the most important, that is "indispensable".
