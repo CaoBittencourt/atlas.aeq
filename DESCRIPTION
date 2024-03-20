@@ -1,10 +1,10 @@
-Package: atlas.kind
+Package: atlas.aeq
 Type: Package
-Title: A Skill Indispensability Coefficient for Human Capital Analyses
-Version: 1.0.3
+Title: An Attribute Equivalence Coefficient for Skill Set Analyses
+Version: 2.0.0
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
-Description: The indispensability of human capital coefficient indicates which attributes in a professional profile are the most important, that is "indispensable".
+Description: The attribute equivalence coefficient indicates the core attributes of a skill set by measuring their equivalence to the most important attribute.
 Depends: atlas.gene, atlas.eqvl
 Remotes: github::caobittencourt/atlas.gene, github::caobittencourt/atlas.eqvl
 License: What license is it under?

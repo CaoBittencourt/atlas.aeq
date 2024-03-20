@@ -49,10 +49,10 @@
 # )
 # 
 # rm(chr_pkg, chr_git)
-# 
+
 # [FUNCTIONS] ---------------------------
-# - Human Capital Indispensability function ---------------------------------------------
-fun_kind_indispensability <- function(
+# - Attribute equivalence function ---------------------------------------------
+fun_aeq_indispensability <- function(
     dbl_profile
     , dbl_scale_lb = 0
     , dbl_generality = NULL
@@ -111,36 +111,36 @@ fun_kind_indispensability <- function(
         max(dbl_profile)
       , dbl_scaling =
         1 - dbl_generality
-    ) -> dbl_indispensability
+    ) -> dbl_attribute_eq
     
   } else {
     
     rep(
       1, length(dbl_profile)
-    ) -> dbl_indispensability
+    ) -> dbl_attribute_eq
     
   }
   
   if(is.matrix(dbl_profile)){
     
     colnames(dbl_profile) ->
-      names(dbl_indispensability)
+      names(dbl_attribute_eq)
     
   } else {
     
     names(dbl_profile) ->
-      names(dbl_indispensability)
+      names(dbl_attribute_eq)
     
   }
   
   # Output
-  return(dbl_indispensability)
+  return(dbl_attribute_eq)
   
 }
 
 # # [TEST] ------------------------------------------------------------------
-# # - Human Capital Indispensability test -------------------------------------------------
-# fun_kind_indispensability(
+# # - fun_aeq_indispensability -------------------------------------------------
+# fun_aeq_aequivalence(
 #   dbl_profile =
 #     rnorm(50, 50, 25) |>
 #     pmax(0) |>
