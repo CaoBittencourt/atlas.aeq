@@ -1,2 +1,2 @@
 # atlas.aeq
- An Indispensability Coefficient for Human Capital Analyses
+ An Attribute Equivalence Coefficient for Skill Set Analyses
