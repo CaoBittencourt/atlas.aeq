@@ -52,7 +52,7 @@
 
 # [FUNCTIONS] ---------------------------
 # - Attribute equivalence function ---------------------------------------------
-fun_aeq_indispensability <- function(
+fun_aeq_aequivalence <- function(
     dbl_profile
     , dbl_scale_lb = 0
     , dbl_generality = NULL
@@ -139,7 +139,7 @@ fun_aeq_indispensability <- function(
 }
 
 # # [TEST] ------------------------------------------------------------------
-# # - fun_aeq_indispensability -------------------------------------------------
+# # - fun_aeq_aequivalence -------------------------------------------------
 # fun_aeq_aequivalence(
 #   dbl_profile =
 #     rnorm(50, 50, 25) |>
