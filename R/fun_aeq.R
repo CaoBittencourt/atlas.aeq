@@ -51,6 +51,93 @@
 # rm(chr_pkg, chr_git)
 
 # [FUNCTIONS] ---------------------------
+# # - Attribute equivalence function ---------------------------------------------
+# fun_aeq_aequivalence <- function(
+#     dbl_profile
+#     , dbl_scale_lb = 0
+#     , dbl_generality = NULL
+# ){
+#   
+#   # Arguments validation
+#   stopifnot(
+#     "'dbl_profile' must be a numeric." =
+#       is.numeric(dbl_profile)
+#   )
+#   
+#   stopifnot(
+#     "'dbl_scale_lb' must be numeric." =
+#       is.numeric(dbl_scale_lb)
+#   )
+#   
+#   stopifnot(
+#     "'dbl_generality' must be either NULL or numeric." =
+#       any(
+#         is.numeric(dbl_generality)
+#         , is.null(dbl_generality)
+#       )
+#   )
+#   
+#   # Data wrangling
+#   dbl_scale_lb[[1]] -> dbl_scale_lb
+#   
+#   if(is.null(dbl_generality)){
+#     
+#     fun_gene_generality(
+#       dbl_profile
+#       , dbl_scale_lb =
+#         dbl_scale_lb
+#     ) -> dbl_generality
+#     
+#   }
+#   
+#   dbl_generality[[1]] -> dbl_generality
+#   
+#   dbl_profile[!is.na(
+#     dbl_profile
+#   )] -> dbl_profile
+#   
+#   # Equivalence of normalized scores
+#   if(
+#     max(dbl_profile) != 
+#     dbl_scale_lb
+#   ){
+#     
+#     fun_eqvl_equivalence(
+#       dbl_var =
+#         dbl_profile
+#       , dbl_scale_lb =
+#         dbl_scale_lb
+#       , dbl_scale_ub =
+#         max(dbl_profile)
+#       , dbl_scaling =
+#         1 - dbl_generality
+#     ) -> dbl_attribute_eq
+#     
+#   } else {
+#     
+#     rep(
+#       1, length(dbl_profile)
+#     ) -> dbl_attribute_eq
+#     
+#   }
+#   
+#   if(is.matrix(dbl_profile)){
+#     
+#     colnames(dbl_profile) ->
+#       names(dbl_attribute_eq)
+#     
+#   } else {
+#     
+#     names(dbl_profile) ->
+#       names(dbl_attribute_eq)
+#     
+#   }
+#   
+#   # Output
+#   return(dbl_attribute_eq)
+#   
+# }
+
 # - Attribute equivalence function ---------------------------------------------
 fun_aeq_aequivalence <- function(
     dbl_profile
@@ -97,29 +184,11 @@ fun_aeq_aequivalence <- function(
   )] -> dbl_profile
   
   # Equivalence of normalized scores
-  if(
-    max(dbl_profile) != 
-    dbl_scale_lb
-  ){
-    
-    fun_eqvl_equivalence(
-      dbl_var =
-        dbl_profile
-      , dbl_scale_lb =
-        dbl_scale_lb
-      , dbl_scale_ub =
-        max(dbl_profile)
-      , dbl_scaling =
-        1 - dbl_generality
-    ) -> dbl_attribute_eq
-    
-  } else {
-    
-    rep(
-      1, length(dbl_profile)
-    ) -> dbl_attribute_eq
-    
-  }
+  fun_eqvl_attribute(
+    dbl_profile = dbl_profile,
+    dbl_midpoint = 1 - dbl_generality,
+    dbl_scale_lb = dbl_scale_lb
+  ) -> dbl_attribute_eq
   
   if(is.matrix(dbl_profile)){
     
