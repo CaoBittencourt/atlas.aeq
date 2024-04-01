@@ -1,7 +1,7 @@
 Package: atlas.aeq
 Type: Package
 Title: An Attribute Equivalence Coefficient for Skill Set Analyses
-Version: 2.0.3
+Version: 2.0.4
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
 Description: The attribute equivalence coefficient indicates the core attributes of a skill set by measuring their equivalence to the most important attribute.

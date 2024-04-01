@@ -228,8 +228,6 @@ fun_aeq_aequivalence <- function(
   )
   
   # Data wrangling
-  dbl_scale_lb[[1]] -> dbl_scale_lb
-  
   if(is.null(dbl_generality)){
     
     fun_gene_generality(
